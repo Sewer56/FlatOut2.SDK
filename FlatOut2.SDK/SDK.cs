@@ -8,6 +8,7 @@ namespace FlatOut2.SDK;
 /// <summary>
 /// Initialisation class for the SDK.
 /// </summary>
+// ReSharper disable once InconsistentNaming
 public static class SDK
 {
     /// <summary>

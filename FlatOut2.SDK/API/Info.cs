@@ -1,5 +1,4 @@
-﻿using System.Reflection.Metadata;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 using FlatOut2.SDK.Enums;
 using FlatOut2.SDK.Functions;
 using FlatOut2.SDK.Structs;

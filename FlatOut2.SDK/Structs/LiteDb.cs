@@ -19,7 +19,7 @@ public unsafe struct LiteDb
 }
 
 [StructLayout(LayoutKind.Explicit)]
-public unsafe struct LiteDbVTable
+public struct LiteDbVTable
 {
     [FieldOffset(0x28)]
     public Functions.LiteDbFuncs.GetTableFnPtr GetTable;

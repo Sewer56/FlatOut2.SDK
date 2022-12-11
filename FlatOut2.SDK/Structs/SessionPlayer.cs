@@ -31,7 +31,7 @@ public unsafe struct SessionPlayer
     /// <summary>
     /// Gets the player name for this structure.
     /// </summary>
-    public static unsafe string GetPlayerName(SessionPlayer* sessionPlayer)
+    public static string GetPlayerName(SessionPlayer* sessionPlayer)
     {
         if (sessionPlayer->PlayerNameExtraData == (void*)0x0)
             return sessionPlayer->PlayerNamePtrOrInline == null ? "" : Marshal.PtrToStringUni((nint)sessionPlayer->PlayerNamePtrOrInline)!;
