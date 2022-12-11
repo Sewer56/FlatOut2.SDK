@@ -36,3 +36,7 @@ var lobbyName = Info.Multiplayer.GetLobbyName(); // GameSpy lobby name.
 ```
 
 Note: As this library is purely personal use, there is no guarantee of stable API.  
+
+## Projects using this Library
+
+- [Rich Presence](https://github.com/Sewer56/FlatOut2.Utils.RichPresence.git)
