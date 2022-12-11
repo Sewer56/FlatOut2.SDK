@@ -30,6 +30,6 @@ public struct LoadScreenInfo
         public unsafe void* BackgroundImagePathPtr;
         public int LevelId;
 
-        public unsafe string BackgroundImagePath => Marshal.PtrToStringAnsi((nint)BackgroundImagePathPtr);
+        public unsafe string BackgroundImagePath => Marshal.PtrToStringAnsi((nint)BackgroundImagePathPtr)!;
     }
 }

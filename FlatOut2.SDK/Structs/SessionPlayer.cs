@@ -34,9 +34,9 @@ public unsafe struct SessionPlayer
     public static unsafe string GetPlayerName(SessionPlayer* sessionPlayer)
     {
         if (sessionPlayer->PlayerNameExtraData == (void*)0x0)
-            return sessionPlayer->PlayerNamePtrOrInline == null ? "" : Marshal.PtrToStringUni((nint)sessionPlayer->PlayerNamePtrOrInline);
+            return sessionPlayer->PlayerNamePtrOrInline == null ? "" : Marshal.PtrToStringUni((nint)sessionPlayer->PlayerNamePtrOrInline)!;
         
-        return Marshal.PtrToStringUni((nint)(&sessionPlayer->PlayerNamePtrOrInline));
+        return Marshal.PtrToStringUni((nint)(&sessionPlayer->PlayerNamePtrOrInline))!;
     }
     /// <summary>
     /// This'll be 0 if the <see cref="PlayerNamePtrOrInline"/> is a pointer.

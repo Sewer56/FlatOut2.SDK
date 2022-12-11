@@ -14,7 +14,7 @@ public static class SDK
     /// Singular source of Reloaded.Hooks library.
     /// Can be replaced with shared library at runtime.
     /// </summary>
-    public static IReloadedHooks ReloadedHooks { get; private set; }
+    public static IReloadedHooks ReloadedHooks { get; private set; } = null!;
 
     /// <summary>
     /// Initializes the Riders SDK as a Reloaded II mod, setting the shared library to be used.

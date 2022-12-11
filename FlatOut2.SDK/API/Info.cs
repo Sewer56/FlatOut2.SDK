@@ -78,7 +78,7 @@ public static class Info
         public static string GetCurrentLevelName()
         {
             var id = GetCurrentLevelId();
-            return Marshal.PtrToStringAnsi(Level.GetLevelName.GetWrapper()(id));
+            return Marshal.PtrToStringAnsi(Level.GetLevelName.GetWrapper()(id))!;
         }
         
         /// <summary>
