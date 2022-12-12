@@ -15,6 +15,7 @@ public unsafe class FileSystemFuncs
     public static readonly IFunction<OpenFileFn> OpenFile = SDK.ReloadedHooks.CreateFunction<OpenFileFn>(0x559970);
     public static readonly IFunction<OpenFileSystemFileFn> OpenFileSystemFile = SDK.ReloadedHooks.CreateFunction<OpenFileSystemFileFn>(0x55A1D0);
     public static readonly IFunction<DoesFileExistFn> DoesFileExist = SDK.ReloadedHooks.CreateFunction<DoesFileExistFn>(0x54C610);
+    public static readonly IFunction<LoadBfsListFn> LoadBfsList = SDK.ReloadedHooks.CreateFunction<LoadBfsListFn>(0x520E10);
     
     /// <summary>
     /// Opens a file from a BFS.
@@ -50,4 +51,14 @@ public unsafe class FileSystemFuncs
     
     [Function(new[] { eax }, eax, StackCleanup.Caller)]
     public struct DoesFileExistFnPtr { public FuncPtr<BlittablePointer<byte>, byte, BlittablePointer<byte>> Value; }
+    
+    /// <summary>
+    /// Loads a list of BFS files specified in a text file.
+    /// </summary>
+    /// <param name="filePath">[eax] File path to text files specifying which BFS files to load.</param>
+    [Function(new[] { esi }, eax, StackCleanup.Caller)]
+    public delegate byte* LoadBfsListFn(byte* filePath);
+    
+    [Function(new[] { esi }, eax, StackCleanup.Caller)]
+    public struct LoadBfsListFnPtr { public FuncPtr<BlittablePointer<byte>, byte, BlittablePointer<byte>> Value; }
 }
