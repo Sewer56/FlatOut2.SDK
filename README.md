@@ -40,3 +40,7 @@ Note: As this library is purely personal use, there is no guarantee of stable AP
 ## Projects using this Library
 
 - [Rich Presence](https://github.com/Sewer56/FlatOut2.Utils.RichPresence.git)
+
+## Credit(s)
+
+- [Zolika1351](https://github.com/Zolika1351): Original C++ headers from which a lot of the FlatOut2.SDK source was derived from.  
