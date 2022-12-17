@@ -16,7 +16,8 @@ public unsafe class FileSystemFuncs
     public static readonly IFunction<OpenFileSystemFileFn> OpenFileSystemFile = SDK.ReloadedHooks.CreateFunction<OpenFileSystemFileFn>(0x55A1D0);
     public static readonly IFunction<DoesFileExistFn> DoesFileExist = SDK.ReloadedHooks.CreateFunction<DoesFileExistFn>(0x54C610);
     public static readonly IFunction<LoadBfsListFn> LoadBfsList = SDK.ReloadedHooks.CreateFunction<LoadBfsListFn>(0x520E10);
-    
+    public static readonly IFunction<InitDecompressionForFileFn> InitDecompressionForFile = SDK.ReloadedHooks.CreateFunction<InitDecompressionForFileFn>(0x560480);
+
     /// <summary>
     /// Opens a file from a BFS.
     /// </summary>
@@ -61,4 +62,7 @@ public unsafe class FileSystemFuncs
     
     [Function(new[] { esi }, eax, StackCleanup.Caller)]
     public struct LoadBfsListFnPtr { public FuncPtr<BlittablePointer<byte>, byte, BlittablePointer<byte>> Value; }
+    
+    [Function(new[] { eax, edi, esi }, eax, StackCleanup.Callee)]
+    public delegate byte* InitDecompressionForFileFn(int a1, int a2, int a3, int a4);
 }
