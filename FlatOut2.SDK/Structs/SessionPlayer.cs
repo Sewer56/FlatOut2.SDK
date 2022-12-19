@@ -33,9 +33,13 @@ public unsafe struct SessionPlayer
     /// </summary>
     public static string GetPlayerName(SessionPlayer* sessionPlayer)
     {
-        if (sessionPlayer->PlayerNameExtraData == (void*)0x0)
-            return sessionPlayer->PlayerNamePtrOrInline == null ? "" : Marshal.PtrToStringUni((nint)sessionPlayer->PlayerNamePtrOrInline)!;
+        if (sessionPlayer->PlayerNamePtrOrInline == null)
+            return "";
         
+        if (sessionPlayer->PlayerNameExtraData == (void*)0x0)
+            return Marshal.PtrToStringUni((nint)sessionPlayer->PlayerNamePtrOrInline)!;
+        
+        // For short strings, full name is stored
         return Marshal.PtrToStringUni((nint)(&sessionPlayer->PlayerNamePtrOrInline))!;
     }
     /// <summary>
