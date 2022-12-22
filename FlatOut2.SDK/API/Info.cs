@@ -52,7 +52,7 @@ public static class Info
                 return "";
 
             var sessionPlayer = playerData->SessionPlayer;
-            if (playerData->SessionPlayer == null)
+            if (sessionPlayer == null)
                 return "";
             
             return SessionPlayer.GetPlayerName(sessionPlayer);
