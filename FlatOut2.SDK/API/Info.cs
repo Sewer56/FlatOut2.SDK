@@ -55,6 +55,10 @@ public static class Info
             if (sessionPlayer == null)
                 return "";
             
+            // VTable Check just in case. Might resolve mysterious crashes on lobby entry.
+            if (sessionPlayer->VTable != (void*)0x675C28)
+                return "";
+            
             return SessionPlayer.GetPlayerName(sessionPlayer);
         }
 

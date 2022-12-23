@@ -6,6 +6,9 @@ namespace FlatOut2.SDK.Structs;
 [StructLayout(LayoutKind.Explicit)]
 public unsafe struct SessionPlayer
 {
+    [FieldOffset(0x0)]
+    public byte* VTable;
+    
     [FieldOffset(0x96)]
     public ushort NetworkId;
     
