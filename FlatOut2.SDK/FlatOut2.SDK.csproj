@@ -10,7 +10,7 @@
 
     <ItemGroup>
       <PackageReference Include="Reloaded.Hooks.Definitions" Version="1.11.0" />
-      <PackageReference Include="Reloaded.Memory" Version="8.0.1" />
+      <PackageReference Include="Reloaded.Memory" Version="9.3.2" />
     </ItemGroup>
 
 </Project>

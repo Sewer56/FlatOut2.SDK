@@ -28,7 +28,7 @@ public unsafe class FileSystemFuncs
     public delegate IntPtr OpenFileFn(byte* filePath, void* thisPtr, int flags);
     
     [Function(CallingConventions.MicrosoftThiscall)]
-    public struct OpenFileFnPtr { public FuncPtr<BlittablePointer<byte>, BlittablePointer<byte>, int, BlittablePointer<byte>> Value; }
+    public struct OpenFileFnPtr { public FuncPtr<Ptr<byte>, Ptr<byte>, int, Ptr<byte>> Value; }
     
     /// <summary>
     /// Opens a file from the filesystem.
@@ -40,7 +40,7 @@ public unsafe class FileSystemFuncs
     public delegate byte* OpenFileSystemFileFn(int flags, byte* filePath);
     
     [Function(new[] { ebx, edi }, eax, StackCleanup.Caller)]
-    public struct OpenFileSystemFileFnPtr { public FuncPtr<int, BlittablePointer<byte>, BlittablePointer<byte>> Value; }
+    public struct OpenFileSystemFileFnPtr { public FuncPtr<int, Ptr<byte>, Ptr<byte>> Value; }
     
     /// <summary>
     /// Checks if a file exists (and sets some other state stuff).
@@ -51,7 +51,7 @@ public unsafe class FileSystemFuncs
     public delegate byte* DoesFileExistFn(byte* filePath, byte checkBfsWrapper);
     
     [Function(new[] { eax }, eax, StackCleanup.Caller)]
-    public struct DoesFileExistFnPtr { public FuncPtr<BlittablePointer<byte>, byte, BlittablePointer<byte>> Value; }
+    public struct DoesFileExistFnPtr { public FuncPtr<Ptr<byte>, byte, Ptr<byte>> Value; }
     
     /// <summary>
     /// Loads a list of BFS files specified in a text file.
@@ -61,7 +61,7 @@ public unsafe class FileSystemFuncs
     public delegate byte* LoadBfsListFn(byte* filePath);
     
     [Function(new[] { esi }, eax, StackCleanup.Caller)]
-    public struct LoadBfsListFnPtr { public FuncPtr<BlittablePointer<byte>, byte, BlittablePointer<byte>> Value; }
+    public struct LoadBfsListFnPtr { public FuncPtr<Ptr<byte>, byte, Ptr<byte>> Value; }
     
     [Function(new[] { eax, edi, esi }, eax, StackCleanup.Callee)]
     public delegate byte* InitDecompressionForFileFn(int a1, int a2, int a3, int a4);

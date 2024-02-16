@@ -23,5 +23,5 @@ public unsafe class Zlib
     public delegate ZlibReturnValue InflateFn(ZlibStream* stream, int flush);
     
     [Function(CallingConventions.Cdecl)]
-    public struct InflateFnPtr { public FuncPtr<BlittablePointer<ZlibStream>, int, ZlibReturnValue> Value; }
+    public struct InflateFnPtr { public FuncPtr<Ptr<ZlibStream>, int, ZlibReturnValue> Value; }
 }

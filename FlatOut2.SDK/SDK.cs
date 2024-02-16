@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics;
 using Reloaded.Hooks.Definitions;
-using Reloaded.Memory.Kernel32;
-using Reloaded.Memory.Sources;
+using Reloaded.Memory;
+using Reloaded.Memory.Enums;
+using Reloaded.Memory.Interfaces;
 
 namespace FlatOut2.SDK;
 
@@ -26,6 +27,6 @@ public static class SDK
         
         var mainModule = Process.GetCurrentProcess().MainModule;
         if (mainModule != null)
-            Memory.CurrentProcess.ChangePermission((nuint)mainModule.BaseAddress, mainModule.ModuleMemorySize, Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
+            Memory.Instance.ChangeProtection((nuint)mainModule.BaseAddress, mainModule.ModuleMemorySize, MemoryProtection.ReadWriteExecute);
     }
 }
